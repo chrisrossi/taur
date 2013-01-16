@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>taur</title>
+    </head>
+    <body>
+        <table>
+            <tr tal:repeat="site sites">
+                <td>${site}</td>
+                <td>button1 button2</td>
+            </tr>
+        </table>
+        <a href="${request.resource_url(context, 'add_site')}">Add Site</a>
+    </body>
+</html>
