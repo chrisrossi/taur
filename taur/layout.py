@@ -1,8 +1,11 @@
 from pyramid.events import subscriber
 from pyramid.events import BeforeRender
+from pyramid_layout.layout import layout_config
 
 
+@layout_config(template="templates/admin_layout.pt")
 class Layout(object):
+    page_title = "Taur"
 
     def __init__(self, context, request):
         self.context = context
