@@ -1,5 +1,3 @@
-from pyramid.events import subscriber
-from pyramid.events import BeforeRender
 from pyramid_layout.layout import layout_config
 
 
@@ -14,8 +12,3 @@ class Layout(object):
 
     def static(self, path):
         return self.request.static_url('taur:static/' + path)
-
-
-@subscriber(BeforeRender)
-def add_layout(event):
-    event['layout'] = Layout(event['context'], event['request'])

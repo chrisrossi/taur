@@ -1,6 +1,6 @@
 from pyramid.config import Configurator
 
-from .sites import Sites
+from .models import Sites
 
 
 def main(global_config, **config):
@@ -9,6 +9,7 @@ def main(global_config, **config):
     config = Configurator(settings=settings, root_factory=find_root)
     config.registry.sites = Sites(settings)
     config.include('pyramid_layout')
+    config.include('pyramid_tm')
     config.add_static_view('css', 'taur:static/css/')
     config.add_static_view('js', 'taur:static/js/')
     config.scan()

@@ -3,21 +3,33 @@
     <metal:block fill-slot="page-content">
         <!-- Body -->
         <div class="container-fluid">
-            <a href="#add-site-modal" role="button" class="btn"
-               data-toggle="modal">Add Site</a>
-            <table>
-                <tr>
-                    <td>Example 1</td>
-                    <td>button1 button2</td>
-                </tr>
-                <tr>
-                    <td>Example 2</td>
-                    <td>button1 button2</td>
-                </tr>
-                <tr tal:repeat="site sites">
-                    <td>${site}</td>
-                    <td>button1 button2</td>
-                </tr>
+            <h1>Manage Sites</h1>
+            <p><a href="#add-site-modal" role="button" class="btn"
+                  data-toggle="modal">Add Site</a></p>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Example 1</td>
+                        <td>
+                            <a href="#" class="btn">View</a>
+                            <a href="#" class="btn">Manage</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Example 2</td>
+                        <td>
+                            <a href="#" class="btn">View</a>
+                            <a href="#" class="btn">Manage</a>
+                        </td>
+                    </tr>
+                    <tr tal:repeat="site sites">
+                        <td>${site}</td>
+                        <td>
+                            <a href="#" class="btn">View</a>
+                            <a href="#" class="btn">Manage</a>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
@@ -28,17 +40,18 @@
                         aria-hidden="true">&times;</button>
                 <h3>Add Site</h3>
             </div>
-            <form>
+            <form action="${add_site_url}">
                 <div class="modal-body">
                     <fieldset>
                         <input type="text" placeholder="Business name"
-                               name="name"/>
+                               name="title"/>
                     </fieldset>
                 </div>
                 <div class="modal-footer">
                     <a href="#" class="btn" data-dismiss="modal" 
                        aria-hidden="true">Close</a>
-                    <a href="#" class="btn btn-primary">Create Site</a>
+                    <button type="submit" 
+                            class="btn btn-primary">Create Site</button>
                 </div>
             </form>
         </div>
