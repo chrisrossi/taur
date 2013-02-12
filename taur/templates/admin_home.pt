@@ -8,22 +8,8 @@
                   data-toggle="modal">Add Site</a></p>
             <table class="table table-bordered">
                 <tbody>
-                    <tr>
-                        <td>Example 1</td>
-                        <td>
-                            <a href="#" class="btn">View</a>
-                            <a href="#" class="btn">Manage</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Example 2</td>
-                        <td>
-                            <a href="#" class="btn">View</a>
-                            <a href="#" class="btn">Manage</a>
-                        </td>
-                    </tr>
                     <tr tal:repeat="site sites">
-                        <td>${site}</td>
+                        <td>${site.title}</td>
                         <td>
                             <a href="#" class="btn">View</a>
                             <a href="#" class="btn">Manage</a>
@@ -55,5 +41,20 @@
                 </div>
             </form>
         </div>
+    </metal:block>
+    <metal:block fill-slot="tail-scripts">
+        <script>
+            $(document).ready(function() {
+                // Focus input when form shown
+                $("#add-site-modal").on("shown", function() {
+                    $("input[name='title']").focus();                    
+                });
+
+                // Don't submit form unless user has entered a title.
+                $("#add-site-modal form").on("submit", function() {
+                    return !! $("input[name='title']").val();
+                });
+            });
+        </script>
     </metal:block>
 </html>

@@ -18,7 +18,7 @@ class AdminUI(object):
         self.layout.page_title = "Taur: Manage Sites"
         return {
             'add_site_url': self.request.resource_url(self.sites, 'add_site'),
-            'sites': sorted(self.sites.keys())
+            'sites': self.sites.proxies()
         }
 
     @view_config(name="add_site")

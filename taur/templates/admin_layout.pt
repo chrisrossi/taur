@@ -30,5 +30,6 @@
         <script src="${layout.static('js/lib/jquery-1.9.0.min.js')}"></script>
         <script src="${layout.static('js/lib/bootstrap.min.js')}"></script>
         <script src="${layout.static('js/lib/require.js')}"></script>
+        <metal:block define-slot="tail-scripts"></metal:block>
     </body>
 </html>
