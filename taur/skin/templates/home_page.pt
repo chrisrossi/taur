@@ -1,0 +1,7 @@
+<html metal:use-macro="main_template">
+    <metal:block fill-slot="page-content">
+        <!-- Body -->
+        <h1>Hi Mom!</h1>
+    </metal:block>
+</html>
+

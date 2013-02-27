@@ -11,8 +11,8 @@
                     <tr tal:repeat="site sites">
                         <td>${site.title}</td>
                         <td>
-                            <a href="#" class="btn">View</a>
-                            <a href="#" class="btn">Manage</a>
+                            <a href="${site.url}" class="btn">View</a>
+                            <a href="${site.manage_url}" class="btn">Manage</a>
                         </td>
                     </tr>
                 </tbody>
@@ -42,6 +42,7 @@
             </form>
         </div>
     </metal:block>
+
     <metal:block fill-slot="tail-scripts">
         <script>
             $(document).ready(function() {

@@ -43,8 +43,14 @@ class Sites(object):
         if site.hostname:
             self.sites_by_hostname[site.hostname] = site.name
 
+    def __getitem__(self, name):
+        proxy = self.sites[name]
+        return proxy()
+
 
 class LazySite(object):
+    __parent__ = None
+    __name__ = None
 
     def __init__(self, folder, site=None):
         self.name = os.path.split(folder)[1]
