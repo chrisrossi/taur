@@ -26,10 +26,10 @@
                 'baseUrl': '${layout.js_url}'
             };
         </script>
-        <!--script src="${layout.static('js/lib/less-1.3.3.min.js')}"></script-->
-        <script src="${layout.static('js/lib/jquery-1.9.0.min.js')}"></script>
-        <script src="${layout.static('js/lib/bootstrap.min.js')}"></script>
-        <script src="${layout.static('js/lib/require.js')}"></script>
+        <!--script src="${layout.js('lib/less-1.3.3.min.js')}"></script-->
+        <script src="${layout.js('lib/jquery-1.9.0.min.js')}"></script>
+        <script src="${layout.js('lib/bootstrap.min.js')}"></script>
+        <script src="${layout.js('lib/require.js')}"></script>
         <metal:block define-slot="tail-scripts"></metal:block>
     </body>
 </html>

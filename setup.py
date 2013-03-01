@@ -60,5 +60,5 @@ setup(name='taur',
       test_suite="taur.tests",
       entry_points="""\
       [paste.app_factory]
-      main = taur.application:main
+      main = taur.manager.application:main
       """)

@@ -2,7 +2,7 @@ from pyramid.httpexceptions import HTTPFound
 from pyramid.view import view_config
 from pyramid.view import view_defaults
 
-from .models import Sites
+from .application import Sites
 
 
 @view_defaults(context=Sites)
@@ -18,8 +18,8 @@ class AdminUI(object):
         url = self.request.resource_url
         self.layout.page_title = "Taur: Manage Sites"
         sites = [{'title': site.title,
-                  'url': url(self.sites, name),
-                  'manage_url': url(self.sites, name, 'manage')}
+                  'url': url(self.sites, 'sites',  name),
+                  'manage_url': url(self.sites, 'sites',  name, 'manage')}
                  for name, site in self.sites.sites.items()]
         return {
             'add_site_url': self.request.resource_url(self.sites, 'add_site'),
